@@ -1,0 +1,257 @@
+/* --Reset-- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*, body, html{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: white;
+} 
+
+/* --Variables-- */
+:root {
+    --color-soft-blue: hsl(243, 86%, 85%);
+    --color-dark-blue: hsl(243, 87%, 12%);
+    --color-accent-green: hsl(163, 95%, 43%);
+    --color-neutral-grey: hsl(0, 0%, 50%);
+}
+
+/* --Typography-- */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body, input, select, textarea, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.page-wrapper {
+    position: relative;
+}
+
+/* NavBar */
+.nav {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    z-index: 5;
+}
+
+.nav__logo-container {
+    width: 40%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo {
+    padding-left: 3rem;    
+}
+
+.nav__logo--dark {
+    display: block;
+}
+
+.nav__logo--white {
+    display: none;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    margin-right: 2rem;
+}
+
+.nav__list-item {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.nav__list-item-link {
+    color: var(--color-dark-blue);
+}
+
+/* Main */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-content__image-container {
+    background: linear-gradient(to bottom right, var(--color-dark-blue), var(--color-soft-blue));
+    height: 100vh;
+    position: relative;
+}
+
+.main-content__image {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: auto;
+}
+
+.main-content__info-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.main-content__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 130%;
+    font-weight: 700;
+}
+
+.main-content__description {
+    font-size: 0.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-neutral-grey);
+    line-height: 130%;
+    font-weight: 400;
+}
+
+.main-content__form-group {
+    width: 100%
+}
+
+.main-content__form-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-content__form {
+    display: flex;
+    align-items: stretch;
+}
+
+.main-content__form-input {
+    width: 70%;
+    height: 3rem;
+    border: none;
+    border-radius: 4px;    
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.12);
+
+}
+
+.main-content__form-button {
+    width: 30%;
+    height: 3rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 3px 8px 0 rgba(0,0,0,0.12);
+    color: #ffffff;
+    background-color: var(--color-accent-green);
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 1rem;    
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em    
+} 
+
+.footer__link {
+    color: var(--color-dark-blue);
+    font-size: 0.8rem;
+    padding: 2rem;
+}
+
+/* Media Queries*/
+@media only screen and (max-width: 768px) {
+    .nav {
+        width: 100%;
+    }
+
+    .nav__logo--dark {
+        display: none;
+    }
+
+    .nav__logo--white {
+        display: block;
+    }
+
+    .nav__list-item-link {
+        color: #ffffff;
+    }
+
+    .main-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;     
+    }
+
+    .main-content__image-container {
+        background: url("./images/bg-intro.svg") center/100% 100% no-repeat;
+        max-height: 50vh;
+        padding-top: 10vh;
+    }
+
+    .main-content__image {
+        width: 50%;
+        height: auto;
+    }
+
+    .main-content__info-container {
+        height: 50vh;
+    }
+
+    .main-content__form {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .main-content__form-input {
+        width: 100%;
+    }
+
+    .main-content__form-button {
+        width: 40%;
+        margin: 1rem 0;
+    }
+
+    .footer {
+        padding-top: 6rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main-content__title {
+        font-size: 1.7rem;
+    }
+    
+
+}
